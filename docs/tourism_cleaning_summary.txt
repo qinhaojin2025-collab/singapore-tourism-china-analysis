@@ -1,0 +1,12 @@
+Tourism data cleaning summary
+Source file: C:\Users\12697\Downloads\Name your insight (2).xlsx
+Raw rows in data block: 111
+Monthly clean rows: 110
+Tree-ready rows: 110
+Monthly date range: 2016-12-01 to 2026-01-01
+Avg stay cap (95th percentile): 33.831658
+Hotel occupancy tertile low cut: 77.983170
+Hotel occupancy tertile high cut: 84.150924
+
+Tree-ready columns:
+date, year, month, quarter, period, visitor_arrivals, visitor_arrivals_china, china_share, china_share_pct, hotel_occ, avg_stay_monthly, avg_stay_monthly_capped, hotel_occ_level_tertile, hotel_occ_level_business, dataset_split

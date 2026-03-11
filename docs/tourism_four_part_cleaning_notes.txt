@@ -1,0 +1,27 @@
+Tourism four-part analysis data
+Source file: C:\Users\12697\Downloads\Name your insight (2).xlsx
+Output CSV: C:\Users\12697\Documents\Playground\tourism_four_part_analysis_ready.csv
+Output XLSX: C:\Users\12697\Documents\Playground\tourism_four_part_analysis_ready.xlsx
+Rows: 110
+Date range: 2016-12-01 to 2026-01-01
+
+Cleaning steps applied:
+1. Removed the first 29 metadata rows from the original Excel sheet.
+2. Kept only actual time-series observations.
+3. Removed the 2015-12-01 monthly row from the analysis-ready data because the main monthly variables were missing.
+4. Converted date and numeric fields into analysis-ready types.
+5. Standardized English column names for modeling and visualization.
+6. Added year, month, quarter, and period labels.
+7. Period labels were defined as pre_covid (through 2020-01), covid_shock (2020-02 to 2021-12), and recovery (from 2022-01 onward).
+8. Added china_share and china_share_pct to measure the weight of China in total visitor arrivals.
+9. Created avg_stay_monthly_capped by capping the upper tail of avg_stay_monthly at the 95th percentile to reduce the impact of extreme pandemic values.
+10. Preserved annual variables (spend_per_capita, tourism_receipts, avg_stay_annual) as supplementary fields for EDA/CDA only.
+11. Added clustering z-score columns for visitor_arrivals, china_share, hotel_occ, and avg_stay_monthly_capped.
+12. Added two decision-tree target labels: hotel_occ_level_tertile and hotel_occ_level_business.
+13. Added dataset_split with a time-ordered 80/20 train-test split for decision tree analysis.
+
+Recommended use:
+- EDA: use raw monthly variables plus annual supplementary variables.
+- CDA: use raw monthly variables, period, and annual supplementary variables as needed.
+- Clustering: use cluster_z_* columns.
+- Decision tree: use hotel_occ_level_tertile or hotel_occ_level_business as the target and dataset_split for train/test separation.
